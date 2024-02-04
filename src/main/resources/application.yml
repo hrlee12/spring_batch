@@ -1,0 +1,28 @@
+jpa:
+  database-platform: mariadb
+
+  show-sql: false
+  hibernate:
+    ddl-auto: none
+
+  properties:
+    hibernate:
+      fotmat_sql: true
+sql:
+  init:
+    continue-on-error: true
+
+spring:
+  config:
+    import: classpath:application-private.yml
+  batch:
+    jdbc:
+      initialize-schema: always
+    job:
+      enabled: true
+
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.orm.jdbc.bind: trace
