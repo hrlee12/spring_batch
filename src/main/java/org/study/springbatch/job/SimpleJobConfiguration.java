@@ -39,8 +39,8 @@ public class SimpleJobConfiguration {
 	@JobScope
 	public Step myStep(JobRepository jobRepository, PlatformTransactionManager transactionManager, @Value("#{jobParameters[requestTime]}") String requestDate) {
 		return new StepBuilder("myStep", jobRepository)
-			.tasklet((contribution, chunkContext) -> {
-				log.info(">>>>>>>>>>> requestDate " + requestDate);
+			.tasklet((contribution, chunkContext) -> {     w
+				   log.info(">>>>>>>>>>> requestDate " + requestDate);
 				return RepeatStatus.FINISHED;
 			}, transactionManager)
 			.build();
