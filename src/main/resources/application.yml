@@ -17,7 +17,7 @@ spring:
     import: classpath:application-private.yml
   batch:
     jdbc:
-      initialize-schema: always
+      initialize-schema: never
     job:
       enabled: true
 
